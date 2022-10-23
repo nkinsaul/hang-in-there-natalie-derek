@@ -23,10 +23,8 @@ We worked for approximately 23 hours on this project.  We are in our second week
 
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
-Natalie Kinsaul
-https://github.com/nkinsaul
-Derek Yeh
-https://github.com/derekgithub2
+- Natalie Kinsaul: https://github.com/nkinsaul
+- Derek Yeh: https://github.com/derekgithub2
 
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
@@ -34,9 +32,9 @@ Write clean dry JavaScript.  Begin to understand the relationship between HTML, 
 
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
-# Wins
+#### Wins
 1. We completed all 4 iterations of the project.
 2. We communicated and worked well collaboratively.  
 
-# Challenges 
+#### Challenges 
 We faced challenges when it came to broader scope issues with HTML in particular.  Some things were difficult to research because of a general lack of understanding of language specfic rules related to HTMl.  We researched problems until we felt we had hit a wall, and then we reached out for help within the cohort.
