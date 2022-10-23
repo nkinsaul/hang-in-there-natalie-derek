@@ -16,7 +16,6 @@ var posterTitle = document.querySelector('#poster-title');
 var posterQuote = document.querySelector('#poster-quote');
 var saveThisPosterButton = document.querySelector('.save-poster');
 var savedPostersGrid = document.querySelector('.saved-posters-grid');
-// var thisID = document.querySelector('#savedPostes.id')
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -128,11 +127,7 @@ backToMainButton.addEventListener('click', goBackToMain)
 showMyPosterButton.addEventListener('click', createNewPoster);
 window.addEventListener('load', generateRandomPoster);
 saveThisPosterButton.addEventListener('click', saveThisPoster);
-// add event listener to listen for SOME EVENT that when a double click occurs on the image, 
-// make var for that image that var for that image id. so 
-// run function (remove the image from page)
-// make a function that removes an array element 
-// function: first remove the poster from the array, then call the for loop function and run that 
+savedPostersGrid.addEventListener('dblclick', getID)
 
 // functions and event handlers go here 👇
 function getRandomIndex(array) {
@@ -196,10 +191,10 @@ function createNewPoster () {
 
 function displayGrid () {
   for (i = 0; i < savedPosters.length; i++) {
-      savedPostersGrid.innerHTML += `<article class="mini-poster"> 
+      savedPostersGrid.innerHTML += `<article class="mini-poster" id=${savedPosters[i].id}> 
       <img class="mini-poster-img" id=${savedPosters[i].id} src="${savedPosters[i].imageURL}" alt="something"> 
-      <h2 class="mini-poster-h2">${savedPosters[i].title}</h2>
-      <h4 class="mini-poster-h4">${savedPosters[i].quote}</h4></article>`
+      <h2 class="mini-poster-h2" id=${savedPosters[i].id}>${savedPosters[i].title}</h2>
+      <h4 class="mini-poster-h4" id=${savedPosters[i].id}>${savedPosters[i].quote}</h4></article>`
   }
 }
 
@@ -209,3 +204,14 @@ function saveThisPoster () {
   }
   alert("Poster Saved!")
 }
+
+function getID () {
+  var elementID = event.target.id 
+  for (i=0; i<savedPosters.length; i++) {
+    if (savedPosters[i].id === elementID) {
+      savedPosters.splice(i, 1);
+      displayGrid();
+    }
+  }
+};
+
