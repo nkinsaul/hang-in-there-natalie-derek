@@ -138,6 +138,7 @@ function generateRandomPoster () {
   poster.src = images[getRandomIndex(images)];
   title.innerText = titles[getRandomIndex(titles)];
   quote.innerText = quotes[getRandomIndex(quotes)];
+  currentPoster = new Poster(poster.src, title.innerText, quote.innerText)
 }
 
 function toggleForm () {
@@ -162,7 +163,6 @@ function goBackToMain () {
   mainPoster.classList.remove("hidden");
   posterForm.classList.add("hidden");
   savedPosterPage.classList.add("hidden");
-  savedPostersGrid.innerHTML = ""
 }
 
 function updateCurrentPoster () {
@@ -190,6 +190,7 @@ function createNewPoster () {
 }
 
 function displayGrid () {
+  savedPostersGrid.innerHTML = ""
   for (i = 0; i < savedPosters.length; i++) {
       savedPostersGrid.innerHTML += `<article class="mini-poster" id=${savedPosters[i].id}> 
       <img class="mini-poster-img" id=${savedPosters[i].id} src="${savedPosters[i].imageURL}" alt="something"> 
@@ -208,10 +209,10 @@ function saveThisPoster () {
 function getID () {
   var elementID = event.target.id 
   for (i=0; i<savedPosters.length; i++) {
-    if (savedPosters[i].id === elementID) {
+    if (savedPosters[i].id === Number(elementID)) {
       savedPosters.splice(i, 1);
-      displayGrid();
     }
   }
+  displayGrid();
 };
 
